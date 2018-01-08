@@ -1,2 +1,2 @@
 # Jenkinsvars
-# Added command to test webkooks
+# Added command to test webhooks on Jenkins.
