@@ -1,4 +1,3 @@
-FROM skycatch/node:4.7-trusty
 FROM python:2.7
 
 WORKDIR /app
