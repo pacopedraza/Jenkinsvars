@@ -1,21 +1,16 @@
 # Jenkinsfile(Declarative Pipeline)
 pipeline {
-    agent none{
+    agent any
+    environment {
+        CC = 'clang'
+    }
     stages {
-        stage('Back-end') {
-            agent {
-                docker { image 'maven:3-alpine' }
-            }
-            steps{
-                sh 'mvn --version'
-            }
-        }
-        stage('Front-end') {
-            agent {
-                docker { image 'node:7-alpine' }
+        stage('Test'){
+            environment {
+                DEBUG_FLAGS = '-g'
             }
             steps {
-                sh 'node --version'
+                sh 'printenv'
             }
         }
     }
