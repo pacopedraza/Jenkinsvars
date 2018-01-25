@@ -1,8 +1,6 @@
 #!groovy
 pipeline {
     agent any
-    node('ecs'){
-    }
     stages {
         stage('Build and archive artifacts'){
             steps {
