@@ -1,8 +1,7 @@
 #!groovy
 pipeline {
-    agent ecs
-    environment {
-        CC = 'clang'
+    agent any
+    node('ecs'){
     }
     stages {
         stage('Build and archive artifacts'){
