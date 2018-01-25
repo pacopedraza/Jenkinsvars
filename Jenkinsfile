@@ -7,8 +7,9 @@ pipeline {
     stages {
         stage('Build and archive artifacts'){
             steps {
-                sh 'make'
+                sh 'echo Is going to try to save artifacts'
                 archiveArtifacts artifacts: '/var/jenkins_home/workspace/e2e_pip/hw.sh', fingerprint: true
+                sh 'artifact saved.'
             }
         }
         stage('Test'){
