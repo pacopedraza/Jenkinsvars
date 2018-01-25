@@ -5,17 +5,15 @@ pipeline {
         CC = 'clang'
     }
     stages {
-        stage('Test Automation Code'){
-            environment {
-                DEBUG_FLAGS = '-g'
-            }
+        stage('Build and archive artifacts'){
             steps {
-                sh 'printenv'
+                sh 'make'
+                archiveArtifacts artifacts: '/var/jenkins_home/workspace/e2e_pip/hw.sh', fingerprint: true
             }
         }
-        stage('Send Artifact to Second Job'){
+        stage('Test'){
             steps {
-                sh 'pwd'
+                sh 'python input_to_secondjob.py'
             }
         }
     }
