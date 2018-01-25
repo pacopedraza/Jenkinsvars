@@ -1,6 +1,6 @@
 #!groovy
 pipeline {
-    agent any
+    agent ecs
     environment {
         CC = 'clang'
     }
@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Downstream and Test job'){
             steps {
-                build job: 'e2e_pip2', parameters: [[$class: 'LabelParameterValue', name: 'node', label: 'ecs']]
+                build job: 'e2e_pip2', parameters: [[$class: 'hw.sh', name: 'node', label: 'ecs']]
             }
         }
     }
