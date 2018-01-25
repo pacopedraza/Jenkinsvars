@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Downstream and Test job'){
             steps {
-                build job: 'e2e_pip2', parameters: [[$class: 'LabelParameter', name: 'node', label: 'ecs']]
+                build job: 'End to End Testing/e2e_2'
             }
         }
     }
