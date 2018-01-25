@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Downstream and Test job'){
             steps {
-                build job: 'End to End Testing/e2e_2'
+                build job: 'End to End Testing/e2e_1'
             }
         }
     }
