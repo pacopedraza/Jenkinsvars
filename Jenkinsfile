@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test'){
             steps {
-                sh 'python input_to_secondjob.py'
+                sh 'python3 input_to_secondjob.py'
             }
         }
     }
