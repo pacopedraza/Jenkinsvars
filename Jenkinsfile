@@ -11,9 +11,9 @@ pipeline {
                 archiveArtifacts artifacts: 'hw.sh', fingerprint: true
             }
         }
-        stage('Test'){
+        stage('Downstream and Test job'){
             steps {
-                sh 'python3 input_to_secondjob.py'
+                build job: '/var/jenkins_home/workspace/End to End Testing/e2e_2'
             }
         }
     }
