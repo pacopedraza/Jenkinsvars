@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Build and archive artifacts'){
             steps {
-                sh 'echo Is going to try to save artifacts'
                 try {
                 archiveArtifacts artifacts: 'hw.sh', fingerprint: true
                 } catch (e) {
