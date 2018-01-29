@@ -1,6 +1,7 @@
 #!groovy
 pipeline {
-    agent { node {label 'ecs' } }
+    //agent { node {label 'ecs' } }
+    agent any
     stages {
         stage('Build and archive artifacts'){
             steps {
