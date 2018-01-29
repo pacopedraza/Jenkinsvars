@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build and archive artifacts'){
             steps {
-                archiveArtifacts artifacts: 'hw.sh', fingerprint: true
+                archiveArtifacts artifacts: 'hw.txt', fingerprint: true
             }
         }
         stage('Downstream and Test job'){
